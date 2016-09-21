@@ -1,15 +1,13 @@
 
-"""
-The default GameState superclass. Gamestates stack on top of eachother to provide
-the UI, effects etc for the game.
-"""
-class GameState:
+from GameState import GameState
 
-    def __init__(self):
+class TestState(GameState):
+
+    def __init__(self, stateName):
         #creates a default state
         pass
 
-    def update(deltaT):
+    def update(updateObject):
         # updates the game state with the passed deltaT float
         pass
 
