@@ -2,13 +2,14 @@
 
 import states.GameState
 from states.TestState import TestState
-import states.GameUpdate
+from states.update import GameUpdate
 
 import pygame
 
 pygame.init()
 
-FPS = 60
+# the FPS for the game (let's be hopeful and say 60 ;) )
+FPS = 1/60
 
 def main():
     print("here we go")
@@ -23,7 +24,7 @@ def main():
 
         # detect key presses
         keyPresses = pygame.key.get_pressed()
-        #update = states.GameUpdate(10, keyPresses)
+        update = GameUpdate(10, keyPresses)
 
 
 if  __name__ =='__main__':main()
