@@ -1,6 +1,6 @@
 # really simple test game class to help build up functionality quickly
 
-import states.GameState
+import time
 from states.TestState import TestState
 from states.update import GameUpdate
 
@@ -15,16 +15,22 @@ def main():
     print("here we go")
     clock = pygame.time.Clock()
 
-    print(type(TestState))
     testState = TestState("test")
+
+    lastTime = time.clock()
 
     # start the main loop
     while True:
         clock.tick(FPS)
 
+        thisTime = time.clock()
+        deltaT = thisTime - lastTime
+        lastTime = thisTime
+
         # detect key presses
         keyPresses = pygame.key.get_pressed()
-        update = GameUpdate(10, keyPresses)
+        update = GameUpdate(deltaT, keyPresses)
+        testState.update(update)
 
 
 if  __name__ =='__main__':main()

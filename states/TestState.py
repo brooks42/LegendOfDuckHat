@@ -7,10 +7,10 @@ class TestState(GameState):
         #creates a default state
         pass
 
-    def update(updateObject):
+    def update(self, updateObject):
         # updates the game state with the passed deltaT float
-        pass
+        print(str(updateObject.deltaT))
 
-    def render(): # might need to take a parameter? multiple render methods?
+    def render(self): # might need to take a parameter? multiple render methods?
         # renders this game state to the screen
         pass
