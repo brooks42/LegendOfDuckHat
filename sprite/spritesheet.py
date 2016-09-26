@@ -9,6 +9,7 @@
 
 import pygame
 
+#
 class Spritesheet(object):
 
     def __init__(self, filename):
@@ -42,8 +43,7 @@ class Spritesheet(object):
                 for x in range(image_count)]
         return self.images_at(tups, colorkey)
 
-
-
+#
 class SpriteStripAnim(object):
     """sprite strip animator
 
