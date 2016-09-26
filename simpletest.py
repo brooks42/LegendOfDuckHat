@@ -19,6 +19,13 @@ def main():
 
     lastTime = time.clock()
 
+    # initialize our screen...
+    screen = pygame.display.set_mode((640, 480))
+
+    # now load our placeholder art so we can display it
+    background = pygame.image.load("assets/images/placeholderloadingscreen.png").convert()
+    background = pygame.transform.scale(background, (640, 480))
+
     # start the main loop
     while True:
         clock.tick(FPS)
@@ -31,6 +38,10 @@ def main():
         keyPresses = pygame.key.get_pressed()
         update = GameUpdate(deltaT, keyPresses)
         testState.update(update)
+
+        # render loop I guess
+        screen.blit(background, (0, 0))
+        pygame.display.update()
 
 
 if  __name__ =='__main__':main()
