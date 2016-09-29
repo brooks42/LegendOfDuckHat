@@ -1,6 +1,7 @@
 # really simple test game class to help build up functionality quickly
 
 import time
+from window import config
 from states.TestState import TestState
 from states.update import GameUpdate
 
@@ -20,11 +21,11 @@ def main():
     lastTime = time.clock()
 
     # initialize our screen...
-    screen = pygame.display.set_mode((640, 480))
+    screen = pygame.display.set_mode(config.resolution)
 
     # now load our placeholder art so we can display it
     background = pygame.image.load("assets/images/placeholderloadingscreen.png").convert()
-    background = pygame.transform.scale(background, (640, 480))
+    background = pygame.transform.scale(background, config.resolution)
 
     # start the main loop
     while True:
@@ -43,7 +44,7 @@ def main():
         screen.blit(background, (0, 0))
         pygame.display.update()
 
-        background = pygame.transform.scale(background, (640, 480))
+        background = pygame.transform.scale(background, config.resolution)
 
 
 if  __name__ =='__main__':main()
