@@ -9,9 +9,6 @@ import pygame
 
 pygame.init()
 
-# the FPS for the game (let's be hopeful and say 60 ;) )
-FPS = 1/60
-
 def main():
     print("here we go")
     clock = pygame.time.Clock()
@@ -29,7 +26,7 @@ def main():
 
     # start the main loop
     while True:
-        clock.tick(FPS)
+        clock.tick(config.FPS)
 
         thisTime = time.clock()
         deltaT = thisTime - lastTime
@@ -43,8 +40,6 @@ def main():
         # render loop I guess
         screen.blit(background, (0, 0))
         pygame.display.update()
-
-        background = pygame.transform.scale(background, config.resolution)
 
 
 if  __name__ =='__main__':main()
