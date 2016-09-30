@@ -10,7 +10,7 @@ class TestState(GameState):
         #creates a default state
         pass
 
-    def update(self, updateObject):
+    def update(self, deltaT):
         # updates the game state with the passed deltaT float
         #print(str(updateObject.deltaT))
         for event in pygame.event.get():

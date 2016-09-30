@@ -33,9 +33,7 @@ def main():
         lastTime = thisTime
 
         # detect key presses
-        keyPresses = pygame.key.get_pressed()
-        update = GameUpdate(deltaT, keyPresses)
-        testState.update(update)
+        testState.update(deltaT)
 
         # render loop I guess
         screen.blit(background, (0, 0))
