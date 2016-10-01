@@ -1,4 +1,5 @@
-# really simple test game class to help build up functionality quickly
+# the main file of the game, can be run with
+# python gamerun.py
 
 import time
 from window import config
@@ -40,4 +41,5 @@ def main():
         pygame.display.update()
 
 
-if  __name__ =='__main__':main()
+if  __name__ =='__main__':
+    main()
