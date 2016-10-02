@@ -19,7 +19,7 @@ def main():
     lastTime = time.clock()
 
     # initialize our screen...
-    screen = pygame.display.set_mode(config.resolution)
+    screen = pygame.display.set_mode(config.resolution, pygame.FULLSCREEN)
 
     # now load our placeholder art so we can display it
     background = pygame.image.load("assets/images/placeholderloadingscreen.png").convert()
