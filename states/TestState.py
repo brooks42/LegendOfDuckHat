@@ -6,7 +6,7 @@ from GameState import GameState
 
 class TestState(GameState):
 
-    def __init__(self, stateName):
+    def __init__(self, stateName, screen):
         #creates a default state
         pass
 
@@ -19,6 +19,6 @@ class TestState(GameState):
                 print("we are done")
                 sys.exit()
 
-    def render(self): # might need to take a parameter? multiple render methods?
+    def render(self, screen): # might need to take a parameter? multiple render methods?
         # renders this game state to the screen
         pass

@@ -3,7 +3,7 @@
 
 import time
 from window import config
-from states.TestState import TestState
+from states.InworldState import InworldState
 from states.update import GameUpdate
 
 import pygame
@@ -14,16 +14,14 @@ def main():
     print("here we go")
     clock = pygame.time.Clock()
 
-    testState = TestState("test")
-
     lastTime = time.clock()
 
     # initialize our screen...
     screen = pygame.display.set_mode(config.resolution, pygame.FULLSCREEN)
 
-    # now load our placeholder art so we can display it
-    background = pygame.image.load("assets/images/placeholderloadingscreen.png").convert()
-    background = pygame.transform.scale(background, config.resolution)
+    # initialize the ingame state here, we have to pass the screen in to give it
+    # our config options
+    testState = InworldState("test", screen)
 
     # start the main loop
     while True:
@@ -37,8 +35,8 @@ def main():
         testState.update(deltaT)
 
         # render loop I guess
-        screen.blit(background, (0, 0))
         pygame.display.update()
+        testState.render(screen)
 
 
 if  __name__ =='__main__':
