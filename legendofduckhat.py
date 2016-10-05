@@ -4,7 +4,6 @@
 import time
 from window import config
 from states.InworldState import InworldState
-from states.update import GameUpdate
 
 import pygame
 
